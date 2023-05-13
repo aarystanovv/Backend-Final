@@ -3,9 +3,11 @@ from django.urls import *
 from . import views
 from django.contrib.auth import views as auth_view
 
+from .forms import LoginForm
+
 urlpatterns = [
     path('support/', views.support, name="support"),
-    path('', views.account, name="account"),
+    path('', views.home, name="home"),
     path('account/', views.account),
     path('cart/', views.cart, name="cart"),
     path('home/', views.home, name="home"),
@@ -38,8 +40,11 @@ urlpatterns = [
     path('item_list', views.item_list, name='item_list'),
     path('wikipedia', views.wiki, name='wikipedia'),
     path('sendemail/', views.contactsendmail, name='contactpage'),
-    path('logout/', auth_view.LogoutView.as_view(next_page='account'), name='logout'),
+    path('logout/', auth_view.LogoutView.as_view(next_page='login'), name='logout'),
     path('category/<slug:val>', views.CategoryView.as_view(), name="category"),
     path('category-title/<val>', views.CategoryTitle.as_view(), name="category-title"),
     path('product-detail/<int:pk>', views.ProductDetail.as_view(), name="product-detail"),
+    path('registration/', views.CustomerRegistrationView.as_view(), name='customerregistration'),
+    path('login/', auth_view.LoginView.as_view(template_name='login.html',
+                                                                     authentication_form=LoginForm), name='login'),
 ]
