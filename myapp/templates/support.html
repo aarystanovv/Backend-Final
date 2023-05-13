@@ -1,0 +1,152 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/absup.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Support</title>
+</head>
+<body>
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap" rel="stylesheet">
+
+<div class="container">
+  <div class="navbar">
+      <div class="logo">
+          <a href="http://localhost:8000/home"  class="shop">Duken</a>
+      </div>
+      <nav>
+          <ul id="MenuItems">
+              <li><a href="http://localhost:8000/home">Home</a></li>
+              <li><a href="http://localhost:8000/products">Products</a></li>
+              <li><a href="http://localhost:8000/account">Account</a></li>
+              <li><a href="http://localhost:8000/AdminUser">Admins</a></li>
+              <li><a href="http://localhost:8000/support">Support</a></li>
+          </ul>
+      </nav>
+     <a href="http://localhost:8000/cart"> <img src="{%  static 'img/cart.png' %}" width="30px" height="30px"> </a>
+      <img src="{%  static 'img/menu.png' %}" class="menu-icon" onclick="menutoggle()">
+  </div>
+
+<hr/>
+
+<div class="suptitle" >
+ <h1 class="sup">SUPPORT</h1>
+</div>
+
+<div class="tema" >
+ <h3>DELIVERY METHOD</h3>
+</div>
+
+
+<details>
+  <summary>
+    courier delivery to your home or office
+  </summary>
+  <div class="supcol-3">
+      <img src="{%  static 'img/dostavka1.png' %}">
+  </div>
+  <h3 class="details"> When included in the DUKEN online store, the delivery cost depends on the city and the amount of the order. The cost is displayed in the shopping cart when placing an order. You can pay for the order to the courier both in cash and with a bank card of any bank in Kazakhstan (for residents of the city of Aktau, Aktobe, Almaty, Atyrau, Karaganda, Kostanay, Nur-Sultan, Pavlodar, Taraz, Uralsk, Ust-Kamenogorsk, Shymkent).<br>
+You can get acquainted with the tariffs for the delivery of orders in your city here.<br>
+Delivery of goods is carried out from 11:00 to 21:00 within the administrative boundaries of the cities of presence of DUKEN stores, 7 days a week. Delivery to remote areas is made in the period from 16.00 to 21.00. The order delivery date is indicated in the SMS message received after the order has been processed.<br>
+Our employees will deliver the order as specified in the order form * and ensure the integrity and completeness of the goods (the completeness is determined by the description of the products or the manual for its operation). Work on the transfer of furniture inside the apartment, setting up equipment and training in its use by the delivery service employees is not performed.<br>
+* The goods are not entered in the apartment, the distance between the door frame or the side of the goods in the package is less than 10 (ten) cm. In this case, the goods remain at the place to which delivery was possible.<br>
+DUKEN reserves the right, at its sole discretion, to change the time and delivery time of the goods without prior notice.</h3>
+</details>
+<details>
+  <summary>
+    pickup from retail stores
+  </summary>
+  <h3 class="details"> After placing your order, you can pick up the product at one of our retail stores.<br>
+• Before visiting the store, it is imperative to agree with the manager the address of the store in which the selected product is available.<br>
+• Payment for an order is made to the cashier using the order number, which can be obtained from the manager of the online store.<br>
+• A reserve for your product is kept within 3 days from the date of order by the manager.<br>
+• You can pay in cash, with a plastic card or a bonus card of the DUKEN chain of stores directly at the cash desk of the store.<br>
+
+! Please check the completeness and absence of defects in the goods upon receipt (completeness with the description of the product or the manual for its operation).</h3>
+</details>
+<details>
+  <summary>
+    service "Order to my city"
+  </summary>
+  <h3 class="details"> The "Order to my city" service is an opportunity to purchase goods that are not available in your city; they will be brought specially for you. The goods will be generated and sent to your city only after 100% prepayment of the order. You can pay for your order at any DUKEN retail store in your city.<br>
+
+Delivery time is from 2 to 15 days and depends on the distance of your city from Almaty. You can pick up the completed and paid order at the DUKEN store or we will deliver it to the address specified in the order.</h3>
+</details>
+
+<div class="suptitle" >
+ <h1>ADDRESS</h1>
+</div>
+<footer id="footer" class="footer">
+  <div class="blockA">
+<h4><em>Shop on "Abylai Khan"</em></h4>
+<p id="nomer">+7707-707-70-07<br>+7777-777-77-77</p>
+<p>Schedule<br>Mon-Sat: from 10:00 to 19:00 <br>Sun: from 10:00 to 13:00</p>
+<p>Address: RK Almaty region 1/1 Abylai Khan street</p>
+</div>
+<div id="map" >
+  <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3Ab63e74547e97456c707b348219be6a1e2710413eaa103591437e7fe245d44d9a&amp;width=100%25&amp;height=431&amp;lang=ru_RU&amp;scroll=true"></script>
+</div>
+</footer>
+<hr/>
+</div>
+
+
+
+
+
+<div class="brands">
+    <div class="small-container">
+        <div class="row">
+            <div class="col-5">
+                <img src="{%  static 'img/logo-marwin.jpg' %}">
+            </div>
+            <div class="col-5">
+                <img src="{%  static 'img/logo-alser.png' %}">
+            </div>
+            <div class="col-5">
+                <img src="{%  static 'img/logo-technodom.png' %}">
+            </div>
+            <div class="col-5">
+                <img src="{%  static 'img/logo-kaspi.png' %}">
+            </div>
+            <div class="col-5">
+                <img src="{%  static 'img/logo-kitapal.jpg' %}">
+            </div>
+        </div>
+    </div>
+</div>
+<footer>
+  <div class="waves">
+      <div class="wave" id="wave1"></div>
+      <div class="wave" id="wave2"></div>
+      <div class="wave" id="wave3"></div>
+      <div class="wave" id="wave4"></div>
+  </div>
+  <ul class="social_icon">
+      <li><a href=""><ion-icon name="logo-facebook"></ion-icon></a></li>
+      <li><a href=""><ion-icon name="logo-tiktok"></ion-icon></a></li>
+      <li><a href=""><ion-icon name="logo-instagram"></ion-icon></a></li>
+      <li><a href=""><ion-icon name="logo-twitter"></ion-icon></a></li>
+      <li><a href=""><ion-icon name="logo-github"></ion-icon></a></li>
+  </ul>
+  <ul class="menu">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/products/">Products</a></li>
+        <li><a href="/account">Account</a></li>
+        <li><a href="/support">About</a></li>
+        <li><a href="/cart">Cart</a></li>
+  </ul>
+  <p>We are celling this site | All Rights Reserved</p>
+</footer>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>
