@@ -50,11 +50,14 @@
               <li><a href="http://localhost:8000/support">Support</a></li>
               <li><a href="http://localhost:8000/wikipedia">Wikipedia</a></li>
               <li><a href="http://localhost:8000/sendemail">Feedback</a></li>
-              <button type="button" id="login" style="margin-right: 20px; font-weight: bold; color: #555; border: 0; background: radial-gradient(#fff, #ffd6d6); font-size: 18px;">
-                  <a href="/profile1" class="nav-link text-white">{{ user.username }}</a></button>
-                   {% if user.username %}
-                    <li><a href="{% url 'logout' %}">Logout</a></li>
-                   {%  endif %}
+              {% if user.is_authenticated %}
+                <li><a href="/profile1">{{ user.username }}</a></li>
+                <li><a href="{% url 'logout' %}">Logout</a></li>
+              {% else %}
+                <li><a href="{% url 'customerregistration' %}">Register</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+              {% endif %}
+
             </ul>
         </nav>
        <a href="http://localhost:8000/cart"> <img src="{%  static 'img/cart.png' %}" width="30px" height="30px"> </a>

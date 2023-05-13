@@ -1,8 +1,11 @@
+from django.contrib import messages
+from django.contrib.auth import login
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.template import loader
 from django.views import View
 
+from final import settings
 from .models import *
 from django.views.decorators.csrf import csrf_exempt
 from .forms import *
@@ -25,7 +28,12 @@ def account(request):
 
 def cart(request):
     car = Cart.objects.all()
-    return render(request, 'cart.html', {'car':car})
+    total_price = 0
+
+    for item in car:
+        total_price += item.price * item.quantity
+
+    return render(request, 'cart.html', {'car': car, 'total_price': total_price})
 
 def product(request):
     products = Products.objects.all()
@@ -378,3 +386,45 @@ class ProductDetail(View):
     def get(self, request, pk):
         product = Product.objects.get(pk=pk)
         return render(request, "productdetail.html", locals())
+
+
+class CustomerRegistrationView(View):
+    def get(self, request):
+        form = CustomerRegistrationForm()
+        return render(request, 'customerregistration.html', {'form': form})
+
+    def post(self, request):
+        form = CustomerRegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            login(request, user)
+            messages.success(request, "Congratulations! User Register Successfully")
+            subject = 'Welcome to Leroy Merlen'
+            message = f'Hi {user.username}, thank you for registering in site.'
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = [user.email, ]
+            send_mail(subject, message, email_from, recipient_list)
+            return redirect("home.html")
+        else:
+            messages.warning(request, "Invalid Input Data")
+        return render(request, 'customerregistration.html', {'form': form})
+
+    def signup(self, request):
+        if request.method == "POST":
+            username = request.POST["username"]
+            password = request.POST["password"]
+            email = request.POST["email"]
+
+            user = User.objects.create_user(
+                username=username,
+                password=password,
+                email=email
+            )
+            login(request, user)
+            subject = 'Welcome to Book Store'
+            message = f'Hi {user.username}, thank you for registering in site.'
+            email_from = settings.EMAIL_HOST_USER
+            recipient_list = [user.email, ]
+            send_mail(subject, message, email_from, recipient_list)
+            return redirect("home")
+        return render(request, "customerregistration.html", {})
