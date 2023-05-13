@@ -1,0 +1,75 @@
+.container {
+        margin-top: 50px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .img2 {
+        width: 50%;
+        margin-top: 20px;
+    }
+
+    .img2 img {
+        width: 350px;
+        height: auto;
+        display: block;
+        margin-left: 150px;
+        margin-top: 30px;
+    }
+
+    .productdetail {
+        width: 50%;
+        margin-top: 20px;
+        font-family: Georgia;
+    }
+
+    .productdetail h1 {
+        font-size: 50px;
+        margin-top: 0;
+    }
+
+    .productdetail h5 {
+        margin-bottom: 10px;
+    }
+
+    .text-decoration-line-through {
+        text-decoration: line-through;
+    }
+
+    .fs-5 {
+        font-size: 1.2em;
+    }
+
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        font-family: Rajdhani;
+        margin-top: 20px;
+    }
+
+    .buttons button {
+        flex: 1 0 auto;
+        margin: 5px;
+        padding: 10px;
+        font-size: 1.2em;
+        background-color: #dc3545;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+
+    .buttons a {
+        flex: 1 0 auto;
+        margin: 5px;
+        padding: 10px;
+        font-size: 1.2em;
+        background-color: #212529;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        cursor: pointer;
+    }

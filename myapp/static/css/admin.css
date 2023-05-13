@@ -1,0 +1,63 @@
+body{
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASsAAACoCAMAAACPKThEAAAAA1BMVEUAAACnej3aAAAASElEQVR4nO3BMQEAAADCoPVPbQo/oAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICXAcTgAAG6EJuyAAAAAElFTkSuQmCC");
+    width: 1500px;
+}
+body > a > button{
+    margin-left: 610px;
+    width: 200px;
+    height: 40px;
+    border-radius: 10px;
+    border-color: transparent;
+    margin-bottom: 10px;
+    background-color: #1b36d9;
+    box-shadow: 0 3px rgba(58, 87, 175, .75);
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    font-size: 16px;
+
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+h1 {
+    font-size: 50px;
+    margin-left: 400px;
+    margin-top: 200px;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    animation: fadeIn 1s ease-in-out;
+}
+
+h2{
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 610px;
+    font-size: 40px;
+    color: #ffffff;
+    animation: fadeIn 1s ease-in-out;
+}
+
+body > a > button{
+    /* your button styles here */
+    transition: all 0.2s ease-in-out;
+}
+
+body > a > button:hover {
+    transform: scale(1.05);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

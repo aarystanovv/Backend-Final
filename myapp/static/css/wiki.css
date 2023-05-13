@@ -1,0 +1,44 @@
+h1{
+  text-align: center;
+}
+
+/* Styling the search container */
+.search-container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 400px;
+  margin-bottom: 20px;
+}
+
+/* Styling the search input */
+.search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Styling the search button */
+.search-button {
+  position: absolute;
+  top: 0.9px;
+  right: -25px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  cursor: pointer;
+}
+
+/* Styling the search button on hover */
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+.wikipedia{
+  width: 70px;
+  display: inline-block;
+}
