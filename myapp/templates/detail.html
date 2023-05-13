@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="../static/css/detail.css">
+    <title>Title</title>
+</head>
+<body>
+<div class="main">
+    Book name: {{ data.name }}<br/><br>
+    Price: {{ data.price }}$<br/><br>
+    Star: {{ data.star }}<br/><br>
+    <a href="{% url 'home' %}"><button>Go back</button></a>
+
+</div>
+</body>
+</html>
