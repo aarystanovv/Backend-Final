@@ -41,7 +41,7 @@
         <div class="row">
             {% for q in product %}
             <div class="col-4">
-               <a href="http://localhost:8000/details/{{q.id}}"> <img src="{{ q.foto }}"> </a>
+               <a href="http://localhost:8000/details/{{q.id}}"> <img src="{{ q.foto.url }}"> </a>
                <a href="http://localhost:8000/details/{{q.id}}"> <h4>{{ q.name }}</h4> </a>
                 <div class="rating">
                     {% if 5 == q.star%}

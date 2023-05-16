@@ -15,7 +15,7 @@
             <div id="item4">Star</div>
             {% for data in allForClientsItems %}
                 <div class="item1"><span class="curs">{{ data.name }}</span></div>
-                <div class="item2"><img id="img" src="{{ data.foto }}"></div>
+                <div class="item2"><img id="img" src="{{ data.foto.url }}"></div>
                 <div class="item3"><span class="curs">{{ data.price }}</span></div>
                 <div class="item4"><span class="curs">{{ data.star }}</span></div>
             {% endfor %}
