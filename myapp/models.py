@@ -27,7 +27,7 @@ class Products(models.Model):
     name = models.CharField(max_length=100)
     star = models.IntegerField()
     price = models.IntegerField()
-    foto = models.CharField(max_length=200)
+    foto = models.ImageField(upload_to='product', blank=True)
 
 class Product(models.Model):
     title = models.CharField(max_length=100)

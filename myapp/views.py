@@ -1,10 +1,9 @@
 from django.contrib import messages
 from django.contrib.auth import login
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import get_object_or_404
 from django.template import loader
 from django.views import View
-
 from final import settings
 from .models import *
 from django.views.decorators.csrf import csrf_exempt
@@ -14,7 +13,8 @@ from django.shortcuts import redirect
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from django.contrib.auth.models import User
-
+from django.shortcuts import render, HttpResponse
+import wikipedia
 
 
 # Create your views here.
@@ -339,11 +339,6 @@ def item_list(request):
     return render(request, 'allForClients.html', {'items': items, 'sort_option': sort_option, 'query': query})
 
 
-
-from django.shortcuts import render, HttpResponse
-import wikipedia
-
-
 # Create your views here.
 def wiki(request):
     if request.method == "POST":
@@ -399,12 +394,12 @@ class CustomerRegistrationView(View):
             user = form.save()
             login(request, user)
             messages.success(request, "Congratulations! User Register Successfully")
-            subject = 'Welcome to Leroy Merlen'
+            subject = 'Welcome to Book Store'
             message = f'Hi {user.username}, thank you for registering in site.'
             email_from = settings.EMAIL_HOST_USER
             recipient_list = [user.email, ]
             send_mail(subject, message, email_from, recipient_list)
-            return redirect("home.html")
+            return redirect("home")
         else:
             messages.warning(request, "Invalid Input Data")
         return render(request, 'customerregistration.html', {'form': form})
